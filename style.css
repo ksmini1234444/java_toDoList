@@ -44,3 +44,11 @@ body {
 .task > div { 
     padding: 1em;
 }
+
+.underline {
+    text-decoration: line-through;
+    background-color: lightcyan;
+    width: 355px;
+}
+
+
