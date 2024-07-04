@@ -47,8 +47,50 @@ body {
 
 .underline {
     text-decoration: line-through;
-    background-color: lightcyan;
     width: 355px;
 }
 
+.task-tabs > div {
+    cursor: pointer;
+}
 
+
+#tab-underline {
+    background-color: lightpink;
+    height: 4px !important;
+    position: absolute;
+    top: 22px;
+    left: 0px;
+    width: 55px;
+    transition: 0.5s;
+    padding: 0px;
+  }
+  
+
+  .fa-check {
+    color: red;
+  }
+  
+  .fa-trash {
+    color: black ;
+  }
+
+#task-input {
+    border: 1px solid blanchedalmond;
+    margin-bottom: 10px;
+}
+
+#add-button {
+    border : none ;
+    background-color: blanchedalmond;
+}
+
+@media screen  and (max-width:48rem) {
+    .container {
+        width: 250px;
+    }
+
+    body {
+        font-size: 0.5m;
+    }
+}
