@@ -52,7 +52,7 @@ function render () {
 
     if (mode==="all") {
         list = taskList ;
-    } else if (mode==="ongoing" || mode==="done") {
+    } else {
         list = filterList ;
     }
 
@@ -88,7 +88,7 @@ function toggleComplete(id) {
             break ; 
         }
     }
-    render () ;
+    filter () ;
 }
 
 function deleteTask (id) {
@@ -99,7 +99,7 @@ function deleteTask (id) {
         }
     }
 
-    render () ;
+    filter () ;
 }
 
 function filter (e) {
@@ -109,30 +109,28 @@ function filter (e) {
         underLine.style.left = e.target.offsetLeft + "px";
         underLine.style.top =
           e.target.offsetTop + (e.target.offsetHeight - 4) + "px";
-      } // 진행중 상태에서 끝남으로 표시하면 바로 사라지는 부분은 event가 없음 그래서 조건추가
-    
+      }
 
     mode = event.target.id;
     filterList = [] ;
 
     console.log(mode) ;
-    if (mode==="all") {
-        render() ;
-    } else if (mode==="ongoing") {
+    if  (mode==="ongoing") {
         //isComplete : false 인값만 보여주기
         for(let i=0 ; i<taskList.length ; i++) {
             if (taskList[i].isComplete===false) {
                 filterList.push(taskList[i]) ;
             }
-        } render () ;
+        } 
     } else if (mode==="done") {
         for ( let i=0 ; i<taskList.length ; i++) {
             if(taskList[i].isComplete===true) {
                 filterList.push(taskList[i]) ;
             }
         }
-        render () ;
+        
     }
+    render () ;
 }
 
 function randomIdGenerate () {
